@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "loggerType": "azureEventHub",
+    "credentials": {
+      "name": "EH-LBOROPEZA/eh-lboropeza",
+      "connectionString": "{{Logger-Credentials--682516844634610e9c417c8e}}"
+    },
+    "description": "event-hub-logger",
+    "isBuffered": true
+  }
+}

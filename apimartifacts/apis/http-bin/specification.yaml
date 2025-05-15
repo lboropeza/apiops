@@ -1,0 +1,67 @@
+openapi: 3.0.1
+info:
+  title: Http Bin
+  description: ''
+  version: v1
+servers:
+  - url: https://apim-lboropeza.azure-api.net/v1
+paths:
+  /get:
+    get:
+      summary: FetchData
+      operationId: fetchdata
+      responses:
+        '200':
+          description: ''
+  '/status/{code}':
+    get:
+      summary: GetStatus
+      operationId: getstatus
+      parameters:
+        - name: code
+          in: path
+          required: true
+          schema:
+            enum:
+              - '200'
+            type: Number
+            default: '200'
+      responses:
+        '200':
+          description: ''
+  /*:
+    get:
+      summary: WildcardGet
+      operationId: wildcardget
+      responses:
+        '200':
+          description: ''
+  /film:
+    get:
+      summary: GetFilm
+      operationId: getfilm
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              example:
+                count: 1
+                films:
+                  - title: A New Hope
+                    release-date: '1977-05-25'
+components:
+  schemas:
+    adasdasd: { }
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

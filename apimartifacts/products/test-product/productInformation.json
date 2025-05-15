@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "test-product",
+    "description": "test",
+    "approvalRequired": false,
+    "state": "notPublished",
+    "subscriptionRequired": true
+  }
+}
