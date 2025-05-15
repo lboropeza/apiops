@@ -1,0 +1,25 @@
+{
+  "properties": {
+    "path": "",
+    "apiRevision": "1",
+    "apiVersion": "v1",
+    "apiVersionSetId": "/subscriptions/a7fbff9d-456b-4e54-b0ae-e02269c684e7/resourceGroups/RG-Temporal_Taller_APIM_User2_luis.oropeza/providers/Microsoft.ApiManagement/service/APIM-LBOROPEZA/apiVersionSets/6823940c4f71cc6d911ab486",
+    "authenticationSettings": {
+      "oAuth2": {
+        "authorizationServerId": "oauth-authorizationcodeflow"
+      }
+    },
+    "description": "",
+    "isCurrent": true,
+    "displayName": "Http Bin",
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://httpbin.org",
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

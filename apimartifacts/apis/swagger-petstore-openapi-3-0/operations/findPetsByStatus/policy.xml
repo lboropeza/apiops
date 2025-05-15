@@ -1,0 +1,51 @@
+<!--
+    - Policies are applied in the order they appear.
+    - Position <base/> inside a section to inherit policies from the outer scope.
+    - Comments within policies are not preserved.
+-->
+<!-- Add policies as children to the <inbound>, <outbound>, <backend>, and <on-error> elements -->
+<policies>
+	<!-- Throttle, authorize, validate, cache, or transform the requests -->
+	<inbound>
+		<base />
+	</inbound>
+	<!-- Control if and how the requests are forwarded to services  -->
+	<backend>
+		<base />
+	</backend>
+	<!-- Customize the responses -->
+	<outbound>
+		<base />
+		<set-header name="date" exists-action="delete" />
+		<xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+		<set-header name="content-type" exists-action="delete" />
+		<set-header name="date" exists-action="delete" />
+		<choose>
+			<when condition="@(context.Response.StatusCode == 200 && context.Product?.Name != "Unlimited" )">
+				<set-body>@{
+    var response = context.Response.Body.As<JArray>();
+
+    var xmlResponse = new System.Text.StringBuilder();
+    xmlResponse.Append("<root>");
+
+    foreach (var item in response) {
+        xmlResponse.Append("<item>");
+        foreach (var property in item.Children<JProperty>()) {
+            if (property.Name != "category") {
+                xmlResponse.AppendFormat("<{0}>{1}</{0}>", property.Name, property.Value);
+            }
+        }
+        xmlResponse.Append("</item>");
+    }
+
+    xmlResponse.Append("</root>");
+    return xmlResponse.ToString();
+}</set-body>
+			</when>
+		</choose>
+	</outbound>
+	<!-- Handle exceptions and customize error responses  -->
+	<on-error>
+		<base />
+	</on-error>
+</policies>

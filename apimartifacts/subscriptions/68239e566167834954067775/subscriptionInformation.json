@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "Starter",
+    "scope": "/subscriptions/a7fbff9d-456b-4e54-b0ae-e02269c684e7/resourceGroups/RG-Temporal_Taller_APIM_User2_luis.oropeza/providers/Microsoft.ApiManagement/service/APIM-LBOROPEZA/products/starter",
+    "allowTracing": false,
+    "ownerId": "/subscriptions/a7fbff9d-456b-4e54-b0ae-e02269c684e7/resourceGroups/RG-Temporal_Taller_APIM_User2_luis.oropeza/providers/Microsoft.ApiManagement/service/APIM-LBOROPEZA/users/68239d2a4634610e9c417741",
+    "state": "active"
+  }
+}

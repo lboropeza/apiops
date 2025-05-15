@@ -1,0 +1,28 @@
+openapi: 3.0.1
+info:
+  title: test-luis
+  description: ''
+  version: '1.0'
+servers:
+  - url: https://apim-lboropeza.azure-api.net/test-luis
+paths:
+  /ejemplos:
+    get:
+      summary: test-get
+      operationId: test-get
+      responses:
+        '200':
+          description: ''
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

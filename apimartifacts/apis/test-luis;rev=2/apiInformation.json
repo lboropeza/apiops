@@ -1,0 +1,18 @@
+{
+  "properties": {
+    "path": "test-luis",
+    "apiRevision": "2",
+    "apiRevisionDescription": "prubea\n",
+    "authenticationSettings": {},
+    "description": "",
+    "displayName": "test-luis",
+    "protocols": [
+      "https"
+    ],
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}
